@@ -47,7 +47,8 @@ class User extends Model
         'email' => 'string',
         'password' => 'string',
         'remember_token' => 'string',
-        'role' => 'string'
+        'role' => 'string',
+        'phone' => 'integer',
     ];
 
     /**
@@ -56,7 +57,7 @@ class User extends Model
      * @var array
      */
     public static $rules = [
-        'email' => 'sometimes|unique:users,email,',
+        'email' => 'sometimes|unique:users.email,',
         'phone' => 'required|unique:users,phone,',
         'name' => 'required',
         'password' => 'required',

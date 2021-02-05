@@ -47,7 +47,7 @@ class OrderController extends AppBaseController
      *
      * @param CreateOrderRequest $request
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(CreateOrderRequest $request)
     {
@@ -57,9 +57,9 @@ class OrderController extends AppBaseController
 
             $order = $this->orderRepository->create($input);
 
-            Flash::success('Order saved successfully.');
+//            Flash::success('Order saved successfully.');
 
-            return redirect()->back();
+        return redirect()->back()->with('Data_Saved','تم ارسال طلبك');
 
 
     }

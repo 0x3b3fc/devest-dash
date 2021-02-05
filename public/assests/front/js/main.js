@@ -238,7 +238,7 @@
 /* End read more model script */
 
 /**  begin Validation */
-
+/*
 var formError = true,  // setting error status
 message = true;
 $(".email, .name, .phone, .subject").blur(function (){  // click out event
@@ -261,7 +261,9 @@ if($(this).val().length > 30){   // more than 30 car
     formError = false;
 }
 }); // End of blur event
+*/
 /* Begin message validation */
+	/*
 $('.messages').blur(function (){
 if($(this).val().length < 10){  // message less than 10 car
     $(this).parent().find('.error').fadeIn(200);
@@ -282,13 +284,16 @@ if($(this).val().length > 100){
     message = false;
 }
 }); // end of messages blur
+*/
 /* End of message validation */
 /* Begin check form and submit if no errors */
+	/*
 $('.submit').submit(function (e){
 if (formError === true || message === true){
     e.preventDefault();
 }
 });
+*/
 /* End check form and submit if no errors */
 /**  End Validation */
 })(jQuery);

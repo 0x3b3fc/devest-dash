@@ -17,7 +17,9 @@
     <link rel="stylesheet" href="{{asset('assests/front/css/bootstrap.min.css')}}">
     @if ( LaravelLocalization::getCurrentLocaleDirection() =='rtl' )
  <link rel="stylesheet" href="{{asset('assests/front/css/bootstrap-rtl.css')}}">
+
     @endif
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
      {{--End of bootstrap--}}
     <link rel="stylesheet" href="{{asset('assests/front/css/style.css')}}">

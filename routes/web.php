@@ -58,7 +58,7 @@ Route::group([
 
 });
 
-Auth::routes(['verify' => true,'register'=>false]);
+Auth::routes(['verify' => true]);
 
 // Infyom Routes
 //Route::group(['middleware'=>'auth'],function (){

@@ -55,9 +55,9 @@ class Order extends Model
      */
     public static $rules = [
         'name'   => 'required|string|max:255',
-        'email'  => 'required|email',
+        'email'  => 'sometimes|email|required',
         'subject'=> 'required|string|max:120',
-        'phone'  => 'required',
+        'phone' => 'required',
         'message'=> 'required|string|max:255'
     ];
 

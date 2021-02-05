@@ -37,7 +37,7 @@
     </div>
     <div class="clearfix"></div>
     @if($infoSection)
-        <section class="ftco-section ftco-portfolio about" id="about">
+        <section class="ftco-section ftco-portfolio about text-right" id="about">
             <div class="row justify-content-center no-gutters">
                 <div class="col-md-12 heading-section text-center ftco-animate mb-5">
                     <h2 class="mb-2">{{$infoSection->title}}</h2>
@@ -53,13 +53,13 @@
                                 <div class="text pt-5 pl-0 pl-lg-5 pl-md-4 ftco-animate">
                                     <div class="desc">
                                         <div >
-                                            <h3 class="mb-4 text-right" >{{$infoSection->who_are_we_title}}</h3>
+                                            <h3 class="mb-4">{{$infoSection->who_are_we_title}}</h3>
                                         </div>
-                                        <div class="absolute text-right">
+                                        <div class="absolute">
                                             <p>
                                                 {{$infoSection->description_who_are_we}}
                                             </p>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -80,16 +80,16 @@
                                             </div>
                                             <div class="absolute">
                                                 <p>
-						<span class="iconify" data-icon="radix-icons:dot-solid" data-inline="false"></span>العالم يتغير بأشخاص ملهمين.
-<br>
-<span class="iconify" data-icon="radix-icons:dot-solid" data-inline="false"></span>التطور المستمر هو أساس الريادة.
-<br>
-<span class="iconify" data-icon="radix-icons:dot-solid" data-inline="false"></span>الفريق المبدع يصنع نتائج استثنائية.
-<br>
-<span class="iconify" data-icon="radix-icons:dot-solid" data-inline="false"></span>الابتكار والتفكير خارج الصندوق؛ يجعلك تسبق الجميع
+                                                    <span class="iconify" data-icon="carbon:dot-mark" data-inline="false"></span>العالم يتغير بأشخاص ملهمين.
+                                                    <br>
+                                                    <span class="iconify" data-icon="carbon:dot-mark" data-inline="false"></span>التطور المستمر هو أساس الريادة.
+                                                    <br>
+                                                    <span class="iconify" data-icon="carbon:dot-mark" data-inline="false"></span>الفريق المبدع يصنع نتائج استثنائية.
+                                                    <br>
+                                                    <span class="iconify" data-icon="carbon:dot-mark" data-inline="false"></span>الابتكار والتفكير خارج الصندوق؛ يجعلك تسبق الجميع.
+                                                    <br>
+                                                </p>
 
-</p>
-                                                
                                             </div>
                                         </div>
                                     </div>
@@ -321,6 +321,11 @@
             <div class="row">
                 <div class="col-md-9 col-sm-12">
                     @include('front.messages.session')
+                    @if(session()->get('data_saved'))
+                        <div class="alert alert-success">
+                            {{ session()->get('data_saved') }}
+                        </div>
+                    @endif
                     <form method="POST" action="{{route('message')}}" class="bg-light p-5 contact-form">
                         @csrf
                         <div class="row">
@@ -330,18 +335,18 @@
                                     @error('name')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                                    <div class="alert alert-danger error">@lang('contact.This field must be more than five characters')</div>
-                                    <div class="alert alert-danger more-than">@lang('contact.This field must be no longer than thirty characters') </div>
+{{--                                    <div class="alert alert-danger error">@lang('contact.This field must be more than five characters')</div>--}}
+{{--                                    <div class="alert alert-danger more-than">@lang('contact.This field must be no longer than thirty characters') </div>--}}
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12">
                                 <div class="form-group">
-                                    <input type="email" name="email" class="form-control email" placeholder="@lang('contact.your email')" required maxlength="100">
+                                    <input type="email" name="email" class="form-control email" placeholder="@lang('contact.your email')" maxlength="100">
                                     @error('email')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                                    <div class="alert alert-danger error">@lang('contact.This field must be more than five characters')</div>
-                                    <div class="alert alert-danger more-than">@lang('contact.This field must be no longer than thirty characters') </div>
+{{--                                    <div class="alert alert-danger error">@lang('contact.This field must be more than five characters')</div>--}}
+{{--                                    <div class="alert alert-danger more-than">@lang('contact.This field must be no longer than thirty characters') </div>--}}
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12">
@@ -350,8 +355,8 @@
                                     @error('subject')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                                    <div class="alert alert-danger error">@lang('contact.This field must be more than five characters')</div>
-                                    <div class="alert alert-danger more-than">@lang('contact.This field must be no longer than thirty characters') </div>
+{{--                                    <div class="alert alert-danger error">@lang('contact.This field must be more than five characters')</div>--}}
+{{--                                    <div class="alert alert-danger more-than">@lang('contact.This field must be no longer than thirty characters') </div>--}}
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12">
@@ -360,18 +365,18 @@
                                     @error('phone')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                                    <div class="alert alert-danger error">@lang('contact.This field must be more than five characters')</div>
-                                    <div class="alert alert-danger more-than">@lang('contact.This field must be no longer than thirty characters') </div>
+{{--                                    <div class="alert alert-danger error">@lang('contact.This field must be more than five characters')</div>--}}
+{{--                                    <div class="alert alert-danger more-than">@lang('contact.This field must be no longer than thirty characters') </div>--}}
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <textarea required name="message" id=""  cols="30" rows="5" class="form-control messages" minlength="15" maxlength="500" placeholder="اكتب رسالتك هنا"></textarea>
+                            <textarea  name="message" id=""  cols="30" rows="5" class="form-control messages" minlength="15" maxlength="500" placeholder="اكتب رسالتك هنا"></textarea>
                             @error('messages')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                            <div class="alert alert-danger error">@lang('contact.This field must be more than five characters')</div>
-                            <div class="alert alert-danger more-than">@lang('contact.This field must be no longer than thirty characters') </div>
+{{--                            <div class="alert alert-danger error">@lang('contact.This field must be more than five characters')</div>--}}
+{{--                            <div class="alert alert-danger more-than">@lang('contact.This field must be no longer than thirty characters') </div>--}}
                         </div>
                         <div class="form-group">
                             <button type="submit" id="submit" class="submit btn btn-danger py-2 px-5 message"><i class="fas fa-arrow-left"></i> اطلب خدمتك الآن </button>
@@ -391,7 +396,24 @@
                                 <div class="col-md-10">
                                     <div class="box">
                                         <p>@lang('contact.email'): </p>
-                                        <p>info@devest.com</p>
+                                        <p>info@devest.co</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="box-info ">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="socail-icon-box">
+                                        <i class="fab fa-facebook-f "></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="box">
+                                        <p>@lang('index.facebook')</p>
+                                        <p>Devest Co</p>
                                     </div>
                                 </div>
                             </div>
